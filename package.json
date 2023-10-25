@@ -1,0 +1,27 @@
+{
+  "name": "chatgpt-wechat-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "node ./src/app.js",
+    "docker:build": "docker build -t my-node-image .",
+    "docker:run": "docker run -v $(pwd)/src:/app/src -p 3000:3000 --name my-node-contaiers my-node-image",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@waylaidwanderer/chatgpt-api": "^1.35.0",
+    "qrcode-terminal": "^0.12.0",
+    "wechaty": "^1.20.2",
+    "wechaty-puppet-wechat": "^1.18.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.21.5",
+    "@babel/core": "^7.21.8",
+    "@babel/node": "^7.20.7",
+    "@babel/preset-env": "^7.21.5",
+    "nodemon": "^2.0.22"
+  }
+}

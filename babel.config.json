@@ -1,0 +1,38 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "current"
+        },
+        "useBuiltIns": "usage",
+        "corejs": 3
+      }
+    ]
+  ],
+  "plugins": [
+    ["@babel/plugin-transform-runtime", {
+      "absoluteRuntime": false,
+      "corejs": false,
+      "helpers": true,
+      "regenerator": true,
+      "useESModules": false
+    }]
+  ],
+  "overrides": [
+    {
+      "test": "./node_modules/wechaty-puppet-service",
+      "plugins": ["@babel/plugin-transform-modules-commonjs"]
+    },
+    {
+      "test": "./node_modules/wechaty",
+      "plugins": ["@babel/plugin-transform-modules-commonjs"]
+    },
+    {
+      "test": "./node_modules/wechaty/node_modules/wechaty-puppet-service",
+      "plugins": ["@babel/plugin-transform-modules-commonjs"]
+    }
+  ],
+  "include": ["node_modules/*"], 
+}
